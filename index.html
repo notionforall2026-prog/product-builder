@@ -1,14 +1,63 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Builder - 제휴 문의</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="container">
+    <header>
+      <h1>Product Builder</h1>
+      <p class="subtitle">함께 성장할 파트너를 찾습니다.</p>
+    </header>
+
+    <main>
+      <section class="form-container">
+        <h2>제휴 문의하기</h2>
+        <p>프로젝트 협업 및 제휴 제안을 남겨주시면 검토 후 연락드리겠습니다.</p>
+        
+        <!-- Formspree 연동 폼 -->
+        <!-- 'xyzkpvqo' 부분을 실제 Formspree ID로 변경하여 사용하세요 -->
+        <form action="https://formspree.io/f/xyzkpvqo" method="POST" id="partnership-form">
+          <div class="form-group">
+            <label for="company">회사명 / 성함</label>
+            <input type="text" id="company" name="company" placeholder="예: (주)에이비씨 / 홍길동" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">이메일 주소</label>
+            <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">문의 유형</label>
+            <select id="subject" name="subject">
+              <option value="partnership">비즈니스 제휴</option>
+              <option value="marketing">마케팅 협업</option>
+              <option value="other">기타 문의</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">문의 내용</label>
+            <textarea id="message" name="message" rows="5" placeholder="상세한 내용을 입력해주세요." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">문의 보내기</button>
+        </form>
+        <div id="form-status"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Product Builder. All rights reserved.</p>
+    </footer>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>
